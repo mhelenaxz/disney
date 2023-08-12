@@ -1,0 +1,167 @@
+@import url('/assets/css/global.css');
+@import url('/assets/css/reset.css');
+
+
+:root {
+    --primary-color: rgb(255, 255, 255);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(8, 0, 51);
+}
+
+body::before {
+    content: "";
+    background-image: url(/assets/images/disney-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.3;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+
+}
+
+.d-menu {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.d-menu__item {
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 1.25rem
+}
+
+.d-menu__icon {
+    width: 6rem;
+    margin: 0 1.25rem;
+}
+
+.d-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 70px;
+    /* tirar a margem */
+   /* margin-top: 2%;*/
+}
+
+.d-card {
+    border: 0.3rem solid white ;
+    width: calc(100% / 3 - 8%);
+    height: 50vh;
+}
+
+.d-card__background {
+    width: 25.4%;
+    height: 97.5%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 65%;
+    transition: opacity 1s ease-in-out;
+}
+
+.d-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    transition: 1s ease-in-out;
+}
+
+.d-card__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-left: 10px;
+    position: absolute;
+    width: 100%;
+    color: #FFF;
+    bottom: 0;
+    transition: bottom 1s ease-in-out;
+}
+
+.d-controller {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+} 
+
+.d-controller__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: rgb(8, 0, 51);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.d-controller__button:hover {
+    transform: scale(1.5)
+}
+
+.d-controller__button:nth-child(2) {
+    margin: 0 3.75rem;
+}
+
+.d-controller__line {
+    background-color: white;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+
+}
+
+/* animação */
+
+.d-card--hovered .d-card__background {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.d-card--hovered .d-card__image {
+    transform: scale(1.4);
+    filter: drop-shadow(30px 10px 4px rgba(0,0,0, .5));
+}
+
+body#background-01-hovered::before {
+    background-image: url(/assets/images/tiana-background.jpg);
+    opacity: 70%;
+}
+
+body#background-02-hovered::before {
+    background-image: url(/assets/images/enrolados-background1.jpg);
+    opacity: 45%;
+}
+
+body#background-03-hovered::before {
+    background-image: url(/assets/images/encanto-cenario-background.jpg);
+    opacity: 70%;
+}
+
+body[id^="background-"]::before {
+    opacity: 1;
+}
+
+.d-card--hovered .d-card__title {
+    bottom: 50%;
+}
